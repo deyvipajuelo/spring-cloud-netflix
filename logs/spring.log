@@ -1,0 +1,22 @@
+2024-06-06T03:46:16.896Z  INFO 1 --- [microservice-user] [main] c.d.s.m.MicroserviceUserApplication      : Starting MicroserviceUserApplication v0.0.1-SNAPSHOT using Java 17.0.11 with PID 1 (/app/microservice-user-0.0.1-SNAPSHOT.jar started by root in /app)
+2024-06-06T03:46:16.904Z  INFO 1 --- [microservice-user] [main] c.d.s.m.MicroserviceUserApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-06-06T03:46:18.834Z  INFO 1 --- [microservice-user] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-06T03:46:18.947Z  INFO 1 --- [microservice-user] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 1 JPA repository interface.
+2024-06-06T03:46:19.289Z  INFO 1 --- [microservice-user] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=de486054-b909-3ed9-bf74-dfe677ea7441
+2024-06-06T03:46:20.084Z  INFO 1 --- [microservice-user] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8001 (http)
+2024-06-06T03:46:20.110Z  INFO 1 --- [microservice-user] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-06T03:46:20.111Z  INFO 1 --- [microservice-user] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-06T03:46:20.191Z  INFO 1 --- [microservice-user] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-06T03:46:20.192Z  INFO 1 --- [microservice-user] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3084 ms
+2024-06-06T03:46:20.480Z  INFO 1 --- [microservice-user] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-06T03:46:20.584Z  INFO 1 --- [microservice-user] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-06T03:46:20.657Z  INFO 1 --- [microservice-user] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-06T03:46:21.116Z  INFO 1 --- [microservice-user] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-06T03:46:21.169Z  INFO 1 --- [microservice-user] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-06T03:46:21.832Z  INFO 1 --- [microservice-user] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4a2e1e52
+2024-06-06T03:46:21.845Z  INFO 1 --- [microservice-user] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-06T03:46:23.515Z  INFO 1 --- [microservice-user] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-06T03:46:23.699Z  INFO 1 --- [microservice-user] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-06T03:46:24.575Z  WARN 1 --- [microservice-user] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-06T03:46:25.663Z  INFO 1 --- [microservice-user] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8001 (http) with context path ''
+2024-06-06T03:46:25.696Z  INFO 1 --- [microservice-user] [main] c.d.s.m.MicroserviceUserApplication      : Started MicroserviceUserApplication in 10.081 seconds (process running for 11.013)

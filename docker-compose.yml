@@ -1,0 +1,51 @@
+version: "3.9"
+services:
+  mysql:
+    container_name: mysql
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+#      MYSQL_DATABASE: db_user -> Se indica la base de datos que se creará
+    networks:
+      - spring
+    volumes:
+      - mysql_volume:/var/lib/mysql
+      - ./init_db:/docker-entrypoint-initdb.d # -> Inicializar la base de datos, copia todo el contenido de init_db a docker-entrypoint-initdb.d
+  microservice-course:
+#    image: course-image -> Crea el contenedor con la imagen indicada, con build se construye a partir del dockerfile
+    build:
+      context: .
+      dockerfile: ./microservice-course/Dockerfile
+    container_name: "microservice_course"
+    ports:
+      - "8002:8002"
+    restart: always
+    env_file:
+      - ./microservice-course/.env
+    networks:
+      - spring
+    depends_on:
+      - mysql
+  microservice-user:
+#    image: user-image
+    build:
+      context: ./
+      dockerfile: ./microservice-user/Dockerfile
+    container_name: "microservice_user"
+    ports:
+      - "8001:8001"
+    restart: always
+    env_file:
+      - ./microservice-user/.env
+    networks:
+      - spring
+    depends_on:
+      - mysql
+volumes:
+  mysql_volume:
+    name: mysql_volume
+networks:
+  spring:
+    name: spring
