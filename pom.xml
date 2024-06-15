@@ -10,11 +10,11 @@
   </parent>
 
   <groupId>com.dpajuelo.spring-microservice</groupId>
-  <artifactId>spring-cloud-kubernetes</artifactId>
+  <artifactId>spring-cloud-netflix</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>spring-cloud-kubernetes</name>
+  <name>spring-cloud-netflix</name>
   <url>http://maven.apache.org</url>
 
   <modules>

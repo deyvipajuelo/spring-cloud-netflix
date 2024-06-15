@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 //@FeignClient(name = "microservice-user", url = "${microservice.user.url}")
-@FeignClient(name = "microservice-user", url = "localhost:8080/user")
+@FeignClient(name = "microservice-user")
 public interface UserClientRest {
 
     @GetMapping("/{id}")

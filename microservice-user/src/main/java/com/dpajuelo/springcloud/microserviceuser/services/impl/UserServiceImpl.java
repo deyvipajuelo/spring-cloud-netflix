@@ -5,6 +5,7 @@ import com.dpajuelo.springcloud.microserviceuser.models.entity.User;
 import com.dpajuelo.springcloud.microserviceuser.repositories.UserRepository;
 import com.dpajuelo.springcloud.microserviceuser.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
