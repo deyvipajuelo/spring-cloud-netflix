@@ -26,6 +26,6 @@ public class User {
     @NotBlank
     private String password;
 
-    private String servidor;
-
+    @Transient
+    private String puerto;
 }

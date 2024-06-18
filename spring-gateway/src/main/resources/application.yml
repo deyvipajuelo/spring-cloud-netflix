@@ -1,0 +1,28 @@
+
+
+server:
+  port: 8080
+spring:
+  application:
+    name: spring-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: microservice-user
+          uri: lb://microservice-user
+          predicates:
+            - Path=/user/**
+        - id: microservice-course
+          uri: lb://microservice-course
+          predicates:
+            - Path=/course/**
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+logging:
+  level:
+    com.dpajuelo.spring.gateway.spring_gateway: DEBUG
+#    reactor.netty.http.client: DEBUG

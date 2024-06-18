@@ -4,6 +4,9 @@ import com.dpajuelo.springcloud.microserviceuser.models.entity.User;
 import com.dpajuelo.springcloud.microserviceuser.services.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +21,9 @@ import java.util.*;
 @RequestMapping("/user")
 public class UserController {
 
+    @Autowired
+    private Environment environment;
+
     private final UserService userService;
 
     @GetMapping
@@ -29,7 +35,10 @@ public class UserController {
     public ResponseEntity<?> getUserById(@PathVariable Long id) {
         Optional<User> user = userService.findById(id);
         if (user.isPresent()) {
-            return ResponseEntity.ok(user);
+            User newUser = user.get();
+            newUser.setPuerto(environment.getProperty("local.server.port"));
+
+            return ResponseEntity.ok(newUser);
         }
         return ResponseEntity.notFound().build();
     }
